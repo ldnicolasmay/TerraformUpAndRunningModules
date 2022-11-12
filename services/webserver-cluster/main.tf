@@ -79,16 +79,16 @@ resource "aws_autoscaling_group" "example" {
 resource "aws_security_group" "alb" {
   name = "${var.cluster_name}-alb-security-group"
 
-  # Allow inbound HTTP requests; now defined in aws_security_group_rule below
-  #ingress {
+  # Allow inbound HTTP requests
+  #ingress { # now defined in aws_security_group_rule below
   #  from_port   = local.http_port
   #  to_port     = local.http_port
   #  protocol    = local.tcp_protocol
   #  cidr_blocks = local.all_ips
   #}
 
-  # Allow all outbound requests; now defined in aws_security_group_rule below
-  #egress {
+  # Allow all outbound requests
+  #egress { # now defined in aws_security_group_rule below
   #  from_port   = 0
   #  to_port     = 0
   #  protocol    = local.any_protocol
